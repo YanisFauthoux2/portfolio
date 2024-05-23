@@ -63,7 +63,8 @@
     }
     .popup {
       position: absolute;
-      top: calc(100% + 10px);
+      top: 50%;
+      transform: translateY(-50%);
       background: #ffffff;
       color: #000000;
       padding: 10px;
@@ -74,10 +75,10 @@
       width: 300px;
     }
     .popup.left {
-      left: -310px;
+      left: -320px; /* Adjusted for more distance */
     }
     .popup.right {
-      left: 310px;
+      left: 320px; /* Adjusted for more distance */
     }
     @media screen and (min-width: 768px) {
       .timeline {
@@ -171,7 +172,7 @@
     <div class="row">
         <div class="col-sm-12">
           <div class="title-box text-center">
-            <h3 class="title-a">
+            <h3 class="title-a" style="margin-bottom:50px">
               MON PARCOURS
             </h3>
             <div class="line-mf"></div>
@@ -186,7 +187,7 @@
       <div class="timeline-component timeline-content">
         <h3>03-2024</h3>
         <p>Alternance chez Holis Consulting</p>
-        <div class="popup right" style="background-color: #f0f5ff;width:500px">
+        <div class="popup right" style="background-color: #f0f5ff; width : 500px">
           <p>Après avoir passé un an et demi chez SQLI en alternance, j'ai décidé de rejoindre Holis Consulting pour explorer de nouveaux horizons.</p>
           <p>Chez Holis, j'ai travaillé en tant que développeur sur des applications principalement en REACT et Java.</p>
           <p>J'ai eu l'opportunité de travailler sur des algorithmes complexes pour le reviewer 3D, ainsi que sur le développement de fonctionnalités diverses pour la plupart des applications de l'entreprise.</p>
@@ -198,7 +199,7 @@
       <div class="timeline-component timeline-content">
         <h3>09-2022</h3>
         <p>Alternance chez SQLI</p>
-        <div class="popup left" style="background-color: #f0f5ff;width:500px">
+        <div class="popup left" style="background-color: #f0f5ff; width : 500px">
           <p>Durant mon alternance chez SQLI, j'ai eu l'opportunité de travailler sur plusieurs projets d'envergure.</p>
           <p>J'étais le principal développeur sur des applications comme Argos et d'autres projets pour l'entreprise RTE.</p>
           <p>Ces projets m'ont permis de maîtriser des technologies telles qu'Angular et Java.</p>
@@ -218,7 +219,7 @@
       <div class="timeline-component timeline-content">
         <h3>03-2022</h3>
         <p>Stage chez SQLI</p>
-        <div class="popup right" style="background-color: #f0f5ff;width:500px">
+        <div class="popup right" style="background-color: #f0f5ff; width : 500px">
           <p>À la suite de mes cinq premiers semestres à l'ESIEA, j'ai eu l'opportunité de réaliser un stage chez SQLI.</p>
           <p>Ce stage a marqué le début de mon parcours professionnel dans le domaine du développement logiciel.</p>
           <p>J'ai principalement travaillé sur des applications en Java et Angular, avec une concentration particulière sur le projet Argos.</p>
@@ -230,7 +231,7 @@
       <div class="timeline-component timeline-content">
         <h3>01-2019</h3>
         <p>Formation d'ingénieur à l'ESIEA</p>
-        <div class="popup left" style="background-color: #f0f5ff;width:500px">
+        <div class="popup left" style="background-color: #f0f5ff; width : 500px">
           <p>J'ai suivi une formation d'ingénieur en informatique à l'ESIEA, une école renommée pour sa pédagogie par projet.</p>
           <p>Durant cette formation, j'ai eu l'occasion d'apprendre et de maîtriser plusieurs technologies telles qu'Angular, Java, C#, JavaScript et SQL.</p>
           <p>Le programme de l'ESIEA est axé sur la pratique, ce qui m'a permis de travailler sur des projets concrets tout au long de mes études.</p>
@@ -250,7 +251,7 @@
       <div class="timeline-component timeline-content">
         <h3>01-2017</h3>
         <p>Bac STI2D au lycée Gaston Crampe</p>
-        <div class="popup right" style="background-color: #f0f5ff; width:500px">
+        <div class="popup right" style="background-color: #f0f5ff; width : 500px">
           <p>J'ai obtenu mon Bac STI2D au lycée Gaston Crampe à Aire-Sur-Adour, un établissement reconnu pour ses formations technologiques.</p>
           <p>Ce cursus m'a permis de découvrir et de développer une passion pour le code et le développement informatique.</p>
           <p>Au cours de ces années, j'ai acquis des connaissances de base en programmation et en technologies de l'information, ce qui a été un point de départ crucial pour mes études supérieures en ingénierie informatique.</p>
