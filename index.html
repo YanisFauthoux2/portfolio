@@ -784,7 +784,34 @@
                     téléversement en fonction de la taille du fichier et de la vitesse de connexion. Cependant, en
                     explorant davantage l'API de YouTube, j'ai découvert que je pouvais obtenir de manière asynchrone le
                     pourcentage de téléversement, rendant l'affichage du progrès plus précis et efficace.
-                  </p>
+                    <h4>Implémentation technique</h4>
+                    <ol>
+                        <li>
+                            <strong>Configuration de l'API YouTube</strong> :<br>
+                            La configuration des autorisations et l'obtention des clés API via la Google Developer Console étaient les premières
+                            étapes essentielles. Cela impliquait de créer des identifiants OAuth 2.0 pour permettre à l'application de
+                            s'authentifier auprès des services de YouTube.
+                        </li>
+                        <li>
+                            <strong>Gestion asynchrone du téléversement</strong> :<br>
+                            Utiliser des tâches asynchrones pour gérer le téléversement a été crucial pour améliorer la précision de l'affichage
+                            du progrès. Grâce aux méthodes fournies par l'API de YouTube, il était possible de suivre le progrès du téléversement
+                            en temps réel. Cela signifiait que l'application pouvait interroger périodiquement l'état du téléversement et afficher
+                            un pourcentage actualisé de l'avancement.
+                        </li>
+                        <li>
+                            <strong>Gestion des événements de progrès</strong> :<br>
+                            En implémentant des gestionnaires d'événements pour surveiller le progrès du téléversement, l'application pouvait
+                            réagir dynamiquement à l'état du téléversement. Par exemple, elle pouvait afficher des notifications ou mettre à jour
+                            une barre de progression à chaque changement de statut.
+                        </li>
+                        <li>
+                            <strong>Réception de la réponse finale</strong> :<br>
+                            Une fois le téléversement terminé, un événement était déclenché pour confirmer que la vidéo avait été téléversée avec
+                            succès. Cela permettait de fournir un retour immédiat à l'utilisateur et de traiter la réponse reçue de l'API pour
+                            obtenir des informations telles que l'ID de la vidéo nouvellement téléversée.
+                        </li>
+                    </ol>
                   <h2>Autocritique</h2>
                   <p>Ma maîtrise du C# est le fruit de plusieurs années de pratique intensive et de projets diversifiés.
                     Toutefois, <strong>il est crucial de reconnaître les domaines où l'amélioration est
@@ -801,6 +828,42 @@
                     fonctions asynchrones pour la première fois. Cette expérience m'a non seulement permis d'améliorer
                     mes compétences en C#, mais aussi de mieux comprendre l'importance de choisir les bons outils et
                     techniques pour chaque projet.</p>
+                    <h4>Implémentation technique</h4>
+                    <ol>
+                        <li>
+                            <strong>Configuration des requêtes HTTP</strong> :<br>
+                            La première étape consistait à configurer les requêtes HTTP pour interroger les différentes API des plateformes.
+                            Chaque plateforme avait ses propres exigences en matière de format de requête et d'authentification, ce qui
+                            nécessitait une configuration minutieuse des en-têtes HTTP et des paramètres de requête.
+                        </li>
+                        <li>
+                            <strong>Utilisation des tâches asynchrones</strong> :<br>
+                            Pour vérifier la disponibilité des pseudonymes en temps réel, l'application devait envoyer des requêtes HTTP de
+                            manière asynchrone. L'utilisation des tâches asynchrones (async/await) permettait de ne pas bloquer le thread
+                            principal de l'application, améliorant ainsi la réactivité et l'efficacité globale. Cela impliquait de comprendre et
+                            de gérer les différentes étapes du cycle de vie des tâches asynchrones.
+                        </li>
+                        <li>
+                            <strong>Gestion des réponses des API</strong> :<br>
+                            Chaque API renvoyait une réponse au format JSON ou XML, contenant des informations sur la disponibilité des
+                            pseudonymes. Il était crucial d'implémenter des mécanismes de désérialisation efficaces pour extraire et analyser
+                            les données pertinentes. Cela incluait la gestion des erreurs et des exceptions pour traiter les réponses
+                            inattendues ou les erreurs de réseau.
+                        </li>
+                        <li>
+                            <strong>Affichage des résultats en temps réel</strong> :<br>
+                            Une fois les données collectées et analysées, l'application devait mettre à jour dynamiquement l'interface
+                            utilisateur pour afficher les résultats de la vérification de disponibilité des pseudonymes. Cela nécessitait
+                            l'utilisation de bindings de données et de notifications de changement pour s'assurer que l'interface reflète
+                            correctement l'état actuel des vérifications en cours.
+                        </li>
+                        <li>
+                            <strong>Optimisation des performances</strong> :<br>
+                            Pour améliorer les performances de l'application, il était essentiel de mettre en œuvre des techniques de mise en
+                            cache et de limiter le nombre de requêtes simultanées envoyées aux API des plateformes. Cela permettait de
+                            réduire la charge sur les serveurs et d'accélérer le processus de vérification.
+                        </li>
+                    </ol>
                   <h2>Evolution</h2>
                   <p>Mon objectif à moyen terme est de <strong>devenir un expert reconnu en C#</strong>, en
                     approfondissant mes connaissances et en élargissant mon champ de compétences. Pour atteindre cet
@@ -878,10 +941,10 @@
 
                     De plus, la méthode agile favorise la <strong>communication continue</strong> entre les membres de
                     l'équipe et les parties prenantes, assurant ainsi que les objectifs du projet sont bien alignés avec
-                    les attentes du client. Dans un autre projet, **Mat'moi ça**, nous avons mis en place des réunions
+                    les attentes du client. Dans un autre projet, <strong>Mat'moi ça</strong>, nous avons mis en place des réunions
                     quotidiennes,
-                    appelées "stand-ups", qui ont permis de maintenir une transparence totale sur l'avancement du projet
-                    et de résoudre rapidement les obstacles. Par exemple, ces stand-ups ont été essentiels pour
+                    qui ont permis de maintenir une transparence totale sur l'avancement du projet
+                    et de résoudre rapidement les obstacles. Par exemple, ces réunions ont été essentiels pour
                     coordonner
                     les différentes tâches liées à l'organisation du tournoi d'échecs en ligne, comme la gestion des
                     inscriptions et la promotion de l'événement.
@@ -899,18 +962,44 @@
                     objectifs de chaque sprint et de maintenir une documentation adéquate pour éviter les malentendus.
                   </p>
                   <h2>Evolution</h2>
-                  <p>La méthode agile continue d'évoluer et de s'adapter aux nouvelles tendances et technologies. Par
-                    exemple, l'intégration de <strong>pratiques DevOps</strong> a permis d'améliorer encore la
-                    collaboration entre les équipes de développement et d'exploitation, rendant le processus de
-                    livraison encore plus fluide et efficace.
-                    À moyen terme, mon objectif est de <strong>maîtriser davantage</strong> ces nouvelles pratiques et
-                    de continuer à me former sur les outils d'automatisation et de gestion de projet agile.
-                    Actuellement, je suis une formation sur les frameworks Scrum et Kanban pour approfondir mes
-                    connaissances et améliorer mes compétences dans ce domaine. Une anecdote qui illustre l'importance
-                    de cette évolution est mon expérience avec <strong>Hypotech</strong>, où l'utilisation d'outils
-                    DevOps pour l'intégration
-                    continue et le déploiement continu a considérablement
-                  </p>
+                  <p>
+                    La méthode agile continue d'évoluer et de s'adapter aux nouvelles tendances et technologies. À moyen terme, mon objectif est de
+                    <strong>maîtriser davantage</strong> ces nouvelles pratiques et de continuer à me former sur les outils d'automatisation et de gestion de projet agile.
+                    Actuellement, je suis une formation sur les frameworks Scrum et Kanban pour approfondir mes connaissances et améliorer mes compétences dans ce domaine.
+                    Une anecdote qui illustre l'importance de cette évolution est mon expérience avec <strong>Hypotech</strong>.
+                </p>
+                <h4>Implémentation technique</h4>
+                <ol>
+                    <li>
+                        <strong>Réunions avec le commanditaire</strong> :<br>
+                        Tous les quinze jours, nous avions une réunion avec le commanditaire du projet pour discuter des progrès, identifier les problèmes
+                        rencontrés et planifier les prochaines étapes. Ces réunions étaient cruciales pour maintenir une communication claire et une bonne
+                        compréhension des attentes du client.
+                    </li>
+                    <li>
+                        <strong>Téléversement des fichiers pour les notaires</strong> :<br>
+                        Une des fonctionnalités clés de l'application était le téléversement sécurisé de documents pour les notaires. Cela impliquait non
+                        seulement des considérations techniques, mais aussi juridiques pour s'assurer de la conformité avec les réglementations en vigueur.
+                        Nous avons utilisé des protocoles de chiffrement robustes pour garantir la confidentialité et l'intégrité des fichiers téléversés.
+                    </li>
+                    <li>
+                        <strong>Validation de la conformité légale</strong> :<br>
+                        Avant de déployer la fonctionnalité de téléversement, il était prévu de collaborer avec des conseillers juridiques pour vérifier
+                        que nos pratiques respectaient les lois en vigueur concernant le stockage et la transmission des documents sensibles. Cette étape
+                        incluait la mise en place de politiques de conservation des données et de procédures de suppression sécurisée.
+                    </li>
+                    <li>
+                        <strong>Formation continue et adoption des frameworks agiles</strong> :<br>
+                        Pour rester à jour avec les meilleures pratiques, j'ai suivi des formations sur les frameworks Scrum et Kanban. Cela m'a permis
+                        d'améliorer notre gestion de projet, en assurant une meilleure planification, une exécution plus fluide et une capacité accrue à
+                        réagir aux changements et aux retours du client.
+                    </li>
+                </ol>
+                <p>
+                    Cette approche, combinant une gestion agile et une attention particulière à la conformité légale, a permis de créer une application robuste
+                    et fiable. Les réunions régulières avec le commanditaire ont été essentielles pour aligner nos efforts sur les attentes du client et garantir
+                    le succès du projet Hypotech.
+                </p>
                   <div style="text-justify: flex;">
                     <a class="btn btn-primary" data-dismiss="modal" role="button"
                       onclick="redirectButtonLink('#workmodal1')">Argos</a>
@@ -971,6 +1060,46 @@
                     dysfonctionnement. Grâce à Java, j'ai pu intégrer des données d'alertes dans Elasticsearch et créer
                     des visualisations dynamiques, améliorant ainsi la surveillance et la gestion des parcs
                     énergétiques.</p>
+                    <h4>Implémentation technique</h4>
+    <ol>
+        <li>
+            <strong>Collecte des données en temps réel</strong> :<br>
+            L'application ARGOS était conçue pour collecter des données en temps réel à partir de divers capteurs et systèmes de monitoring des parcs
+            énergétiques. Ces données comprenaient des métriques telles que la production d'énergie, les températures des équipements, et d'autres
+            paramètres critiques pour la surveillance des infrastructures.
+        </li>
+        <li>
+            <strong>Intégration avec Elasticsearch</strong> :<br>
+            Pour gérer efficacement ces volumes de données et permettre des requêtes rapides et flexibles, nous avons utilisé Elasticsearch. Les données
+            collectées étaient indexées dans Elasticsearch, ce qui facilitait leur recherche et leur analyse. L'intégration avec Elasticsearch impliquait
+            l'utilisation des APIs Java pour indexer, mettre à jour et rechercher les documents de manière efficace.
+        </li>
+        <li>
+            <strong>Génération et gestion des alertes</strong> :<br>
+            En plus de la collecte et de l'indexation des données, ARGOS était chargé de générer des alertes en cas de dysfonctionnement ou de dépassement
+            de seuils prédéfinis. Nous avons implémenté des algorithmes de détection d'anomalies qui surveillaient les flux de données en temps réel et
+            déclenchaient des alertes lorsqu'une anomalie était détectée. Ces alertes étaient également indexées dans Elasticsearch pour un suivi
+            ultérieur.
+        </li>
+        <li>
+            <strong>Visualisation des données</strong> :<br>
+            La partie frontend de l'application, développée en Angular, permettait de visualiser les données de manière dynamique. Nous avons utilisé des
+            bibliothèques de visualisation telles que D3.js pour créer des graphiques interactifs et des tableaux de bord qui affichaient les données en
+            temps réel. Les utilisateurs pouvaient explorer les données historiques et actuelles, ainsi que les alertes générées, via une interface
+            intuitive et réactive.
+        </li>
+        <li>
+            <strong>Optimisation des performances</strong> :<br>
+            Pour assurer des performances optimales, nous avons mis en place plusieurs optimisations. Cela incluait l'utilisation de techniques de
+            mise en cache pour réduire la charge sur Elasticsearch, l'optimisation des requêtes pour minimiser les temps de réponse, et la mise en
+            œuvre de stratégies de partitionnement des données pour gérer efficacement les volumes importants de données.
+        </li>
+    </ol>
+    <p>
+        Ce projet ARGOS a démontré l'importance de l'intégration de technologies avancées comme Elasticsearch pour la gestion et la visualisation des
+        données en temps réel. En combinant une collecte de données robuste, une indexation efficace et des visualisations dynamiques, nous avons
+        considérablement amélioré la surveillance et la gestion des parcs énergétiques pour RTE.
+    </p>
                   <h2>Autocritique</h2>
                   <p>Mon niveau de maîtrise de Java est avancé, mais <strong>je suis toujours à la recherche
                       d'améliorations</strong>. Une des difficultés rencontrées a été l'optimisation de la performance
@@ -1052,6 +1181,53 @@
                     intégré des visualisations dynamiques des données collectées et des alertes en cas de
                     dysfonctionnement. L'utilisation d'Angular a permis de gérer efficacement les données volumineuses
                     et complexes, assurant une surveillance continue et réactive.</p>
+                    <h4>Implémentation technique</h4>
+                    <ol>
+                        <li>
+                            <strong>Architecture de l'application Angular</strong> :<br>
+                            L'application frontend a été structurée en utilisant Angular, un framework bien adapté pour créer des applications web dynamiques et
+                            réactives. Nous avons utilisé une architecture basée sur des modules pour organiser le code en différentes fonctionnalités, facilitant
+                            ainsi la maintenance et l'extensibilité de l'application.
+                        </li>
+                        <li>
+                            <strong>Services et gestion des données</strong> :<br>
+                            Pour gérer les données, nous avons mis en place des services Angular pour communiquer avec les APIs backend. Ces services utilisaient
+                            le module HttpClient d'Angular pour effectuer des requêtes HTTP vers notre backend Java, récupérant ainsi les données en temps réel et
+                            les transmettant aux composants frontend. Cela permettait de maintenir une séparation claire entre la logique de présentation et la
+                            logique métier.
+                        </li>
+                        <li>
+                            <strong>Composants réutilisables</strong> :<br>
+                            Nous avons développé des composants réutilisables pour les différentes parties de l'interface utilisateur, tels que les graphiques,
+                            les tableaux de bord, et les fenêtres de dialogue pour les alertes. Ces composants étaient conçus pour être modulaires et facilement
+                            intégrables, utilisant des Input et Output properties pour la communication inter-composants.
+                        </li>
+                        <li>
+                            <strong>Visualisation des données</strong> :<br>
+                            Pour la visualisation des données, nous avons intégré des bibliothèques de visualisation telles que D3.js et Chart.js. Ces bibliothèques
+                            permettaient de créer des graphiques interactifs et des visualisations complexes qui s'actualisaient en temps réel en fonction des
+                            données reçues. Angular facilitait l'intégration de ces visualisations en les encapsulant dans des composants dédiés.
+                        </li>
+                        <li>
+                            <strong>Gestion des états et des événements</strong> :<br>
+                            L'utilisation d'Angular a également permis une gestion efficace des états et des événements. Nous avons utilisé le service RxJS pour
+                            gérer les flux de données asynchrones, permettant une réaction rapide aux changements de données et aux événements utilisateurs. Les
+                            observables et les sujets (subjects) de RxJS ont été utilisés pour propager les mises à jour des données à travers les différents
+                            composants de l'application.
+                        </li>
+                        <li>
+                            <strong>Optimisation des performances</strong> :<br>
+                            Pour garantir des performances optimales, nous avons mis en place des techniques telles que la détection de changement OnPush et
+                            l'optimisation des rendus de composants. Cela impliquait de minimiser les rendus inutiles et de s'assurer que les composants ne se
+                            mettaient à jour que lorsqu'il était nécessaire. De plus, nous avons utilisé la pagination et le chargement paresseux (lazy loading)
+                            pour gérer les gros volumes de données efficacement.
+                        </li>
+                    </ol>
+                    <p>
+                        Le projet ARGOS a démontré l'efficacité d'Angular pour développer des interfaces utilisateur interactives et réactives, capables de gérer
+                        des volumes importants de données en temps réel. En combinant une architecture modulaire, des services robustes et des visualisations
+                        dynamiques, nous avons considérablement amélioré la surveillance et la gestion des parcs énergétiques pour RTE.
+                    </p>
                   <h2>Autocritique</h2>
                   <p>En ce qui concerne mon niveau de maîtrise de cette compétence, <strong>je peux affirmer que j'ai
                       atteint un niveau avancé dans l'utilisation d'Angular</strong>. Cependant, il est important de
@@ -1141,6 +1317,51 @@
                     requêtes. Cette expérience m'a appris l'importance de l'analyse préalable et du prototypage lors de
                     la sélection et de l'intégration des API pour minimiser les risques et assurer que l'API choisie
                     réponde réellement aux besoins spécifiques du projet.
+                    <h2>Implémentation technique</h2>
+    <ol>
+        <li>
+            <strong>Analyse des besoins et sélection des sites cibles</strong> :<br>
+            La première étape du projet consistait à identifier les sites web et les plateformes de jeux vidéo où les pseudonymes devaient être
+            vérifiés. Cette analyse préalable était cruciale pour comprendre les différentes méthodes d'accès aux données, y compris les sites
+            sans API publique.
+        </li>
+        <li>
+            <strong>Utilisation de proxies pour contourner les limitations</strong> :<br>
+            Certains sites limitaient le nombre de requêtes provenant d'une seule adresse IP. Pour contourner ces restrictions, nous avons utilisé
+            des proxies. Les proxies permettaient de distribuer les requêtes à travers plusieurs adresses IP, évitant ainsi les blocages et les
+            limitations imposées par les sites cibles.
+        </li>
+        <li>
+            <strong>Scraping des données sans API</strong> :<br>
+            Pour les sites sans API accessible, nous avons mis en œuvre des techniques de web scraping pour extraire les données nécessaires. Cela
+            impliquait l'utilisation de bibliothèques telles que HtmlAgilityPack pour analyser le HTML des pages web et extraire les informations
+            sur la disponibilité des pseudonymes. Le scraping devait être conçu de manière à respecter les conditions d'utilisation des sites web
+            et à minimiser les risques de détection et de blocage.
+        </li>
+        <li>
+            <strong>Gestion des requêtes asynchrones</strong> :<br>
+            Pour gérer efficacement les requêtes vers de multiples sites web, nous avons utilisé des tâches asynchrones en C#. Cela permettait de
+            ne pas bloquer le thread principal de l'application et d'effectuer des vérifications en parallèle. La gestion des tâches asynchrones
+            était essentielle pour maintenir la réactivité de l'application et améliorer les performances globales.
+        </li>
+        <li>
+            <strong>Validation et gestion des erreurs</strong> :<br>
+            Lors de l'intégration des proxies et du scraping, nous avons mis en place des mécanismes de validation et de gestion des erreurs. Cela
+            incluait la gestion des réponses HTTP, la détection des erreurs de connexion, et la mise en œuvre de stratégies de nouvelle tentative
+            pour les requêtes échouées. Une gestion robuste des erreurs était essentielle pour assurer la fiabilité de l'application.
+        </li>
+        <li>
+            <strong>Prototypage et tests</strong> :<br>
+            Avant de finaliser l'intégration, nous avons réalisé des prototypes pour tester les différentes approches d'accès aux données. Cela
+            nous a permis de valider les solutions techniques et de s'assurer qu'elles répondaient aux besoins du projet. Le prototypage était
+            également crucial pour identifier les problèmes potentiels et ajuster les stratégies d'intégration avant la mise en production.
+        </li>
+    </ol>
+    <p>
+        Ce projet m'a appris l'importance de l'analyse préalable et du prototypage lors de la sélection et de l'intégration des API. En utilisant
+        des proxies et des techniques de scraping, nous avons pu contourner les limitations et obtenir les informations nécessaires, assurant
+        ainsi que l'application OgChecker réponde efficacement aux besoins des utilisateurs.
+    </p>
                   </p>
                   <h2>Evolution</h2>
                   <p>Les API sont en constante évolution et leur maîtrise est essentielle pour tout expert en
