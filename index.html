@@ -1327,7 +1327,7 @@
         </li>
         <li>
             <strong>Utilisation de proxies pour contourner les limitations</strong> :<br>
-            Certains sites limitaient le nombre de requêtes provenant d'une seule adresse IP. Pour contourner ces restrictions, nous avons utilisé
+            Certains sites limitaient le nombre de requêtes provenant d'une seule adresse IP. Pour contourner ces restrictions, j'ai utilisé
             des proxies. Les proxies permettaient de distribuer les requêtes à travers plusieurs adresses IP, évitant ainsi les blocages et les
             limitations imposées par les sites cibles.
         </li>
@@ -1353,7 +1353,7 @@
         <li>
             <strong>Prototypage et tests</strong> :<br>
             Avant de finaliser l'intégration, nous avons réalisé des prototypes pour tester les différentes approches d'accès aux données. Cela
-            nous a permis de valider les solutions techniques et de s'assurer qu'elles répondaient aux besoins du projet. Le prototypage était
+            m'a permis de valider les solutions techniques et de s'assurer qu'elles répondaient aux besoins du projet. Le prototypage était
             également crucial pour identifier les problèmes potentiels et ajuster les stratégies d'intégration avant la mise en production.
         </li>
     </ol>
@@ -1431,24 +1431,46 @@
                     diverses opérations comme la création, la mise à jour, la suppression et la lecture de données,
                     offrant une structure cohérente et unifiée pour la gestion des informations.</p>
                   <h2>Utilisation</h2>
-                  <p>Dans un <strong>contexte professionnel</strong>, le SQL est omniprésent. Par exemple, lors de mon
-                    travail sur le projet ARGOS chez SQLI, j'ai utilisé SQL pour intégrer une grande quantité de données
-                    d'alertes dans Elasticsearch. Cela a permis une meilleure gestion et visualisation des alertes des
-                    parcs énergétiques de RTE, améliorant ainsi la réactivité et la performance du système de
-                    surveillance. Une autre expérience notable est le projet Hypotech. Dans ce cadre, j'ai utilisé SQL
-                    pour gérer les interactions entre acheteurs, vendeurs et notaires, simplifiant ainsi le processus de
-                    communication et de gestion des documents dans les transactions immobilières. Ces exemples
-                    illustrent comment maîtriser SQL permet de résoudre des problèmes complexes et d'atteindre des
-                    objectifs stratégiques.
-                  </p>
+                  <p>Dans un <strong>contexte professionnel</strong>, le SQL est omniprésent. Par exemple, lors de mon travail sur le projet ARGOS chez SQLI, j'ai utilisé SQL pour intégrer une grande quantité de données d'alertes dans Elasticsearch. Cela a permis une meilleure gestion et visualisation des alertes des parcs énergétiques de RTE, améliorant ainsi la réactivité et la performance du système de surveillance. Voici quelques détails techniques sur ce projet:</p>
+                  <h2>Implémentation Technique</h2>
+                  <ol>
+                      <li>
+                          <strong>Collecte et intégration des données d'alertes</strong>:<br>
+                          Utilisation de scripts SQL pour extraire des données d'alertes des bases de données relationnelles. Transformation des données pour les adapter au format requis par Elasticsearch, en utilisant des requêtes SQL complexes incluant des jointures, des sous-requêtes et des agrégations. Importation des données transformées dans Elasticsearch à l'aide d'outils ETL (Extract, Transform, Load), permettant une indexation efficace et une recherche rapide.
+                      </li>
+                      <li>
+                          <strong>Optimisation des requêtes</strong>:<br>
+                          Analyse et optimisation des requêtes SQL pour améliorer les performances, surtout lorsqu'il s'agissait de traiter de grandes quantités de données. Utilisation d'index appropriés, de partitions de tables et de plans d'exécution pour minimiser les temps de réponse et réduire la charge sur le serveur de base de données.
+                      </li>
+                      <li>
+                          <strong>Visualisation des données</strong>:<br>
+                          Développement d'interfaces en Angular pour afficher les données d'alertes en temps réel, intégrant des graphiques et des tableaux de bord interactifs. Intégration d'Elasticsearch avec Angular via des API REST, permettant une mise à jour en temps réel des données affichées.
+                      </li>
+                  </ol>
                   <h2>Autocritique</h2>
-                  <p>Mon <strong>niveau de maîtrise du SQL</strong> est avancé, mais il y a toujours une marge de
-                    progression. Mon expérience m'a appris que la compétence SQL ne fonctionne pas toujours de la même
-                    manière dans toutes les situations. Par exemple, les requêtes qui fonctionnent efficacement sur une
-                    petite base de données peuvent devenir problématiques sur des bases de données plus volumineuses. De
-                    plus, avec le développement constant des technologies de base de données, il est crucial de se tenir
-                    à jour. En rétrospective, je conseille de toujours tester les requêtes SQL sur différents jeux de
-                    données pour s'assurer de leur performance et de leur efficacité dans divers contextes.
+                  <p>Mon <strong>niveau de maîtrise du SQL</strong> est avancé, mais il y a toujours une marge de progression. Mon expérience m'a appris que la compétence SQL ne fonctionne pas toujours de la même manière dans toutes les situations. Par exemple, les requêtes qui fonctionnent efficacement sur une petite base de données peuvent devenir problématiques sur des bases de données plus volumineuses. De plus, avec le développement constant des technologies de base de données, il est crucial de se tenir à jour. En rétrospective, je conseille de toujours tester les requêtes SQL sur différents jeux de données pour s'assurer de leur performance et de leur efficacité dans divers contextes.</p>
+<ol>
+    <li>
+        <strong>Analyse des besoins et définition du schéma de la base de données</strong>:<br>
+        Lors de la conception du projet Hypotech, j'ai commencé par une analyse approfondie des besoins des utilisateurs finaux (acheteurs, vendeurs, notaires) pour définir un schéma de base de données relationnelle efficace. Cela incluait la modélisation des entités telles que les transactions immobilières, les documents légaux, et les utilisateurs, et leurs relations.
+    </li>
+    <li>
+        <strong>Développement de requêtes SQL pour la gestion des transactions</strong>:<br>
+        J'ai créé des requêtes SQL pour gérer les différentes étapes des transactions immobilières. Par exemple, l'insertion de nouvelles transactions, la mise à jour des statuts des documents, et la suppression des transactions terminées. Des transactions SQL ont été utilisées pour garantir l'intégrité des données et gérer les opérations atomiques.
+    </li>
+    <li>
+        <strong>Optimisation des performances des requêtes</strong>:<br>
+        Pour assurer la rapidité et l'efficacité de l'application, j'ai optimisé les requêtes SQL en utilisant des index sur les colonnes fréquemment utilisées dans les clauses WHERE et JOIN. J'ai également employé des vues matérialisées pour les rapports complexes nécessitant une agrégation de données à partir de multiples tables.
+    </li>
+    <li>
+        <strong>Gestion des permissions et de la sécurité</strong>:<br>
+        J'ai implémenté un système de gestion des utilisateurs et des rôles avec SQL, garantissant que seules les personnes autorisées pouvaient accéder ou modifier certaines données. Des procédures stockées sécurisées ont été utilisées pour encapsuler les opérations critiques et minimiser les risques de SQL injection.
+    </li>
+    <li>
+        <strong>Prototypage et tests</strong>:<br>
+        Avant de finaliser l'intégration, j'ai réalisé des prototypes pour tester les différentes approches d'accès aux données. Cela m'a permis de valider les solutions techniques et de s'assurer qu'elles répondaient aux besoins du projet. Le prototypage était également crucial pour identifier les problèmes potentiels et ajuster les stratégies d'intégration avant la mise en production.
+    </li>
+</ol>
                   </p>
                   <h2>Evolution</h2>
                   <p><strong>Dans mon projet personnel-professionnel</strong>, je vise à approfondir mes compétences en
@@ -1495,45 +1517,19 @@
 
                 <div class="row gy-4">
                   <h2>Définition</h2>
-                  <p><strong>L'événementiel</strong> est une compétence essentielle dans le domaine de l'ingénierie,
-                    particulièrement lorsqu'il s'agit de la gestion de projets complexes et de la coordination d'équipes
-                    multidisciplinaires. Cette compétence consiste à planifier, organiser, et gérer des événements,
-                    allant de réunions internes à des conférences internationales. Maîtriser
-                    <strong>L'événementiel</strong> implique une capacité à anticiper les besoins, gérer les imprévus,
-                    et s'assurer que chaque aspect de l'événement se déroule sans accroc.
-                  </p>
+                  <p><strong>L'événementiel</strong> est une compétence essentielle dans le domaine de l'ingénierie, particulièrement lorsqu'il s'agit de la gestion de projets complexes et de la coordination d'équipes multidisciplinaires. Cette compétence consiste à planifier, organiser, et gérer des événements, allant de réunions internes à des conférences internationales. Maîtriser <strong>L'événementiel</strong> implique une capacité à anticiper les besoins, gérer les imprévus, et s'assurer que chaque aspect de l'événement se déroule sans accroc.</p>
                   <h2>Utilisation</h2>
-                  <p>Dans mon parcours professionnel, j'ai eu l'opportunité d'utiliser mes compétences en événementiel
-                    dans divers contextes. Par exemple, lors de l'organisation du tournoi d'échecs caritatif
-                    <strong>Mat'moi ça</strong>, j'ai coordonné la collaboration avec chess.com et l'UNICEF, géré la
-                    logistique et assuré la communication avec les participants. Cet événement a permis de récolter des
-                    fonds pour une cause importante, démontrant l'impact social positif des compétences en événementiel.
-                  </p>
-                  <p>
-                    Une autre anecdote marquante concerne l'organisation du projet <strong>ARGOS</strong> pour
-                    surveiller les parcs énergétiques de RTE. J'ai orchestré les présentations, géré les interactions
-                    avec les intervenants et assuré que les objectifs techniques soient atteints. La réussite de ces
-                    projets a non seulement permis d'atteindre les objectifs fixés, mais a aussi renforcé la cohésion
-                    des équipes et l'efficacité des opérations.
+                  <p>Dans mon parcours professionnel, j'ai eu l'opportunité d'utiliser mes compétences en événementiel dans divers contextes. Par exemple, lors de l'organisation du tournoi d'échecs caritatif <strong>Mat'moi ça</strong>, j'ai coordonné la collaboration avec chess.com et l'UNICEF, géré la logistique et assuré la communication avec les participants. Cet événement a permis de récolter des fonds pour une cause importante, démontrant l'impact social positif des compétences en événementiel.</p>
+                  <p>Pour organiser <strong>Mat'moi ça</strong>, nous avons dû d'abord élaborer un plan détaillé. Initialement prévu en présentiel, nous avons décidé de basculer vers un format en ligne pour surmonter les défis logistiques et sanitaires. Cette décision a nécessité une réévaluation complète des besoins matériels et humains, ainsi que la mise en place de nouvelles stratégies de communication et de gestion.</p>
+                  <p>Ensuite, j'ai été chargé de contacter chess.com pour obtenir leur soutien. Grâce à une négociation habile, nous avons obtenu des abonnements premium gratuits pour les participants, ce qui a considérablement augmenté l'attrait de notre événement. Cette collaboration a non seulement facilité la promotion de notre tournoi mais a également assuré une expérience utilisateur améliorée pour tous les participants.</p>
+                  <p>En tant que trésorier, ma responsabilité principale était de gérer le budget de l'événement. Cela incluait la recherche de sponsors, la gestion des dépenses et la planification des revenus attendus. Par exemple, nous avons décidé d'utiliser les abonnements premium offerts par chess.com comme des récompenses pour encourager les inscriptions et les dons. Cette gestion stratégique des ressources a permis d'équilibrer les coûts et d'atteindre nos objectifs financiers malgré des moyens limités.</p>
                   </p>
                   <h2>Autocritique</h2>
-                  <p>En analysant mes expériences passées, je constate que <strong>ma capacité à gérer des
-                      événements</strong> a été mise à rude épreuve à plusieurs reprises. Si j'ai généralement bien su
-                    anticiper les besoins et gérer les imprévus, il m'est arrivé de sous-estimer certaines contraintes
-                    logistiques, comme le nombre de places disponibles ou les exigences techniques des équipements. Ma
-                    marge de progression se situe principalement dans la gestion des détails et l'optimisation des
-                    ressources disponibles. Avec le recul, je conseille de toujours prévoir des solutions alternatives
-                    et de maintenir une communication constante avec tous les intervenants. La capacité à rester
-                    flexible et à adapter rapidement les plans en cas de changement est cruciale dans ce domaine.
-                  </p>
+                  <p>En analysant mes expériences passées, je constate que ma capacité à gérer des événements a été mise à rude épreuve à plusieurs reprises. Si j'ai généralement bien su anticiper les besoins et gérer les imprévus, il m'est arrivé de sous-estimer certaines contraintes logistiques, comme le nombre de places disponibles ou les exigences techniques des équipements. Ma marge de progression se situe principalement dans la gestion des détails et l'optimisation des ressources disponibles. Avec le recul, je conseille de toujours prévoir des solutions alternatives et de maintenir une communication constante avec tous les intervenants. La capacité à rester flexible et à adapter rapidement les plans en cas de changement est cruciale dans ce domaine.</p>
+                  <p>Par exemple, lors de l'organisation de <strong>Mat'moi ça</strong>, j'ai rencontré des difficultés imprévues avec la plateforme en ligne. Les limitations techniques de chess.com pour les tournois à grande échelle ont nécessité des ajustements de dernière minute, comme la division du tournoi en plusieurs sous-tournois pour éviter la surcharge du système. Cette expérience m'a appris l'importance de toujours avoir des plans de secours et de tester rigoureusement les outils et plateformes utilisés avant l'événement.</p>
                   <h2>Evolution</h2>
-                  <p>Mon ambition est de continuer à développer cette compétence en suivant des formations spécialisées
-                    en gestion de projets événementiels et en participant à des conférences professionnelles. <strong>À
-                      moyen terme</strong>, je vise à atteindre un niveau d'expertise reconnu dans ce domaine, afin de
-                    pouvoir prendre en charge des événements de plus grande envergure et à plus forte valeur ajoutée
-                    pour l'entreprise. Je suis actuellement en train de suivre une formation en ligne sur la gestion
-                    avancée des événements et je prévois de participer à un séminaire international sur les nouvelles
-                    tendances de l'événementiel dans le secteur technologique.</p>
+                  <p>Mon ambition est de continuer à développer cette compétence en suivant des formations spécialisées en gestion de projets événementiels et en participant à des conférences professionnelles. À moyen terme, je vise à atteindre un niveau d'expertise reconnu dans ce domaine, afin de pouvoir prendre en charge des événements de plus grande envergure et à plus forte valeur ajoutée pour l'entreprise. Je suis actuellement en train de suivre une formation en ligne sur la gestion avancée des événements et je prévois de participer à un séminaire international sur les nouvelles tendances de l'événementiel dans le secteur technologique.</p>
+                  <p>En conclusion, l'utilisation des compétences en événementiel est une compétence essentielle qui nécessite une compréhension approfondie et une adaptation continue. Les expériences acquises et les formations suivies contribuent à mon développement professionnel et à la réalisation de projets de plus en plus complexes et innovants.</p>
                   <div style="text-justify: flex;">
                     <a class="btn btn-primary" data-dismiss="modal" role="button"
                       onclick="redirectButtonLink('#workmodal4')">Mat'moi ça</a>
@@ -1569,57 +1565,33 @@
 
                 <div class="row gy-4">
                   <h2>Définition</h2>
-                  <p>La <strong>gestion de projet</strong> est une compétence essentielle dans le domaine de
-                    l’ingénierie, permettant de planifier, d’organiser, de diriger et de contrôler les ressources afin
-                    de réaliser des objectifs spécifiques. Cette compétence se situe au cœur de l’activité
-                    professionnelle, où chaque projet nécessite une coordination minutieuse et une exécution rigoureuse
-                    pour être mené à bien.
-                    Dans un contexte professionnel, la gestion de projet implique la définition des objectifs,
-                    l'élaboration des plans détaillés, la gestion des ressources humaines et matérielles, ainsi que la
-                    surveillance et le contrôle des progrès pour garantir la réalisation des objectifs dans les délais
-                    et les budgets impartis. Par exemple, dans une entreprise d'ingénierie, cette compétence est
-                    cruciale pour garantir que les projets de développement de produits respectent les spécifications
-                    techniques et les exigences des clients.</p>
+                  <p>La <strong>gestion de projet</strong> est une compétence essentielle dans le domaine de l’ingénierie, permettant de planifier, d’organiser, de diriger et de contrôler les ressources afin de réaliser des objectifs spécifiques. Cette compétence se situe au cœur de l’activité professionnelle, où chaque projet nécessite une coordination minutieuse et une exécution rigoureuse pour être mené à bien.
+                  Dans un contexte professionnel, la gestion de projet implique la définition des objectifs, l'élaboration des plans détaillés, la gestion des ressources humaines et matérielles, ainsi que la surveillance et le contrôle des progrès pour garantir la réalisation des objectifs dans les délais et les budgets impartis. Par exemple, dans une entreprise d'ingénierie, cette compétence est cruciale pour garantir que les projets de développement de produits respectent les spécifications techniques et les exigences des clients.</p>
                   <h2>Utilisation</h2>
-                  <p>La gestion de projet se manifeste concrètement à travers diverses étapes et activités, allant de
-                    l'initiation à la clôture du projet. Par exemple, lors du projet <strong>Mat'moi ça</strong>, j’ai
-                    dirigé l’organisation d’un tournoi d'échecs en ligne caritatif en collaboration avec chess.com et
-                    l'UNICEF. J'ai commencé par définir les exigences du projet en collaboration avec les parties
-                    prenantes, puis j'ai établi un calendrier détaillé et attribué les tâches aux membres de l'équipe.
-                    Pendant la phase d'exécution, j'ai assuré une communication fluide entre les équipes et les parties
-                    prenantes, organisé des réunions régulières pour évaluer l'avancement et ajuster les plans si
-                    nécessaire. Grâce à cette approche structurée, nous avons réussi à récolter des fonds pour l'UNICEF
-                    et à organiser un événement significatif malgré des ressources limitées.
-                    Un autre exemple est le projet <strong>Hypotech</strong>, où j’ai dirigé une équipe pour développer
-                    une application visant à simplifier le processus de communication entre acheteurs, vendeurs et
-                    notaires. J'ai coordonné les efforts pour intégrer les fonctionnalités demandées et veillé à ce que
-                    chaque phase du projet soit réalisée selon le planning établi. La gestion efficace des ressources et
-                    une communication constante avec le commanditaire ont permis de livrer une application fonctionnelle
-                    qui a simplifié les transactions immobilières pour les utilisateurs.</p>
+                  <p>La gestion de projet se manifeste concrètement à travers diverses étapes et activités, allant de l'initiation à la clôture du projet. Par exemple, lors du projet <strong>Mat'moi ça</strong>, un tournoi d'échecs en ligne caritatif, réalisé en collaboration avec chess.com et l'UNICEF, j’ai dirigé l’organisation et assuré la gestion des différentes phases du projet. Mon rôle principal, en tant que trésorier, impliquait la gestion du budget, un aspect crucial pour l'équilibre financier du projet.</p>
+                  <h3>Mat'moi ça</h3>
+                  <p>Le projet <strong>Mat'moi ça</strong> a été une opportunité de mettre en œuvre mes compétences en gestion de projet dans un contexte réel. Voici quelques détails techniques sur l'utilisation de cette compétence au sein de ce projet :</p>
+                  <ol>
+                      <li><strong>Planification initiale</strong> : La première étape consistait à définir les exigences du projet et à élaborer un calendrier détaillé. J'ai organisé une réunion avec toutes les parties prenantes pour discuter des objectifs, des ressources disponibles, et des contraintes. Nous avons initialement envisagé un tournoi en présentiel, mais après évaluation des risques logistiques et en raison du contexte post-pandémie, nous avons opté pour un événement en ligne.</li>
+                      <li><strong>Collaboration avec chess.com</strong> : Pour assurer le succès du tournoi, nous avons contacté chess.com, qui a offert des abonnements premium gratuits et promu notre événement sur leur plateforme. Cette collaboration a permis de bénéficier d'outils avancés pour la gestion du tournoi et d'accroître la visibilité de l'événement.</li>
+                      <li><strong>Gestion du budget</strong> : En tant que trésorier, j'étais responsable de gérer les fonds du projet. Cela incluait le suivi des dépenses et des revenus, la négociation de partenariats, et l'équilibre du budget. Nous avons investi notre propre argent et bénéficié du soutien de chess.com, ce qui a permis de réduire les coûts.</li>
+                      <li><strong>Suivi et ajustements</strong> : Pendant la phase d'exécution, j'ai organisé des réunions régulières pour évaluer l'avancement du projet et ajuster les plans si nécessaire. Cette approche structurée a permis de gérer efficacement les imprévus et de maintenir la communication fluide entre les équipes et les parties prenantes.</li>
+                  </ol>
+                  <p>Cette expérience m'a enseigné l'importance de la planification proactive, de la collaboration et de la gestion rigoureuse des ressources pour atteindre les objectifs du projet. Même avec des moyens limités, il est possible de réaliser des projets significatifs en sollicitant des contributions et en optimisant les ressources disponibles.</p>
+                  <h3>Hypotech</h3>
+                  <p>Un autre exemple pertinent est le projet <strong>Hypotech</strong>, une application développée en Java et Angular pour simplifier la communication entre acheteurs, vendeurs et notaires. Mon rôle dans ce projet comprenait plusieurs aspects techniques de la gestion de projet :</p>
+                  <ol>
+                      <li><strong>Réunion de lancement</strong> : La première étape a été de rencontrer le commanditaire pour discuter des attentes et des fonctionnalités souhaitées. Nous avons ensuite créé une maquette de l'application pour visualiser le produit final.</li>
+                      <li><strong>Choix de la direction artistique</strong> : Après avoir proposé plusieurs maquettes, le commanditaire a choisi un style spécifique. Cette étape était cruciale pour s'assurer que l'application répondait aux attentes visuelles et fonctionnelles du client.</li>
+                      <li><strong>Réunions bi-hebdomadaires</strong> : Des réunions toutes les deux semaines avec le commanditaire ont permis de vérifier l'avancement du projet et d'ajuster les fonctionnalités en fonction des retours. Cette méthode agile a assuré une communication constante et une flexibilité dans le développement.</li>
+                      <li><strong>Développement et intégration</strong> : En tant que développeur, j'étais responsable du téléversement des fichiers, de la création des écrans et du développement du système de comptes et de connexion. Cela impliquait une coordination étroite avec les autres membres de l'équipe pour assurer une intégration harmonieuse des différentes fonctionnalités.</li>
+                      <li><strong>Gestion des imprévus</strong> : Une anecdote marquante concernait les questions de légalité et les restrictions spécifiques au domaine immobilier. Nous avons dû consulter des experts pour s'assurer de la conformité légale de l'application, ce qui a ajouté un niveau de complexité à la gestion du projet.</li>
+                  </ol>
+                  <p>Ce projet m'a permis de renforcer mes compétences en gestion de projet, en particulier dans un environnement agile. La nécessité de s'adapter aux changements et de gérer les imprévus a été une leçon précieuse pour la gestion efficace des projets futurs.</p>
                   <h2>Autocritique</h2>
-                  <p>Malgré ces réussites, il est important de reconnaître les marges de progression dans la maîtrise de
-                    la gestion de projet. Bien que je considère mon niveau de compétence comme élevé, je m'efforce
-                    constamment d'améliorer mes méthodes et ma compréhension des meilleures pratiques. Par exemple, j'ai
-                    noté que ma capacité à anticiper les risques et à élaborer des plans de contingence peut être encore
-                    améliorée. Lors du projet <strong>Hypotech</strong>, une mauvaise évaluation initiale des risques a
-                    conduit à des ajustements imprévus qui auraient pu être évités. Cet incident m’a poussé à
-                    approfondir mes connaissances en gestion des risques à travers des formations spécifiques.
-                    La gestion de projet ne fonctionne pas de la même manière dans toutes les situations ; elle doit
-                    être adaptée en fonction des contextes et des défis spécifiques de chaque projet. Dans mes conseils
-                    aux autres et à moi-même, je recommande de toujours faire preuve de flexibilité et d’adaptabilité,
-                    de rester à l’écoute des équipes et de ne jamais sous-estimer l’importance de la planification
-                    proactive.</p>
+                  <p>Malgré ces réussites, il est important de reconnaître les marges de progression dans la maîtrise de la gestion de projet. Par exemple, lors du projet <strong>Hypotech</strong>, une mauvaise évaluation initiale des risques a conduit à des ajustements imprévus qui auraient pu être évités. Cet incident m’a poussé à approfondir mes connaissances en gestion des risques à travers des formations spécifiques. La gestion de projet doit être adaptée en fonction des contextes et des défis spécifiques de chaque projet. Dans mes conseils aux autres et à moi-même, je recommande de toujours faire preuve de flexibilité et d’adaptabilité, de rester à l’écoute des équipes et de ne jamais sous-estimer l’importance de la planification proactive.</p>
                   <h2>Evolution</h2>
-                  <p>La gestion de projet est une compétence dynamique qui évolue constamment. À moyen terme, je
-                    souhaite atteindre un niveau d'expertise encore plus élevé en obtenant des certifications
-                    supplémentaires, comme le <strong>PMP</strong> (Project Management Professional). Actuellement, je
-                    suis en cours de formation sur les nouvelles méthodes agiles, qui sont de plus en plus adoptées dans
-                    l'industrie.
-                    Mon projet personnel-professionnel inclut de devenir un référent en gestion de projet au sein de mon
-                    entreprise, en contribuant à la formation des nouvelles recrues et en partageant
-                    mes connaissances et expériences pour améliorer les pratiques de l'équipe. Je compte également mener
-                    des autoformations continues pour rester à jour avec les dernières tendances et technologies en
-                    gestion de projet.</p>
+                  <p>La gestion de projet est une compétence dynamique qui évolue constamment. À moyen terme, je souhaite atteindre un niveau d'expertise encore plus élevé en obtenant des certifications supplémentaires, comme le <strong>PMP</strong> (Project Management Professional). Actuellement, je suis en cours de formation sur les nouvelles méthodes agiles, qui sont de plus en plus adoptées dans l'industrie. Mon projet personnel-professionnel inclut de devenir un référent en gestion de projet au sein de mon entreprise, en contribuant à la formation des nouvelles recrues et en partageant mes connaissances et expériences pour améliorer les pratiques de l'équipe. Je compte également mener des autoformations continues pour rester à jour avec les dernières tendances et technologies en gestion de projet.</p>
                   <div style="text-justify: flex;">
                     <a class="btn btn-primary" data-dismiss="modal" role="button"
                       onclick="redirectButtonLink('#workmodal4')">Mat'moi ça</a>
@@ -1657,47 +1629,14 @@
 
                 <div class="row gy-4">
                   <h2>Définition</h2>
-                  <p>La communication est une compétence cruciale dans le milieu professionnel, englobant l'échange
-                    d'informations, d'idées et de sentiments entre individus ou groupes. <strong>Elle se manifeste sous
-                      diverses formes</strong>, telles que la communication verbale, non verbale, écrite, et digitale.
-                    Dans un contexte professionnel, la communication est essentielle pour assurer la clarté des
-                    instructions, la collaboration entre équipes, et la transmission efficace des connaissances.</p>
+                  <p>La communication est une compétence cruciale dans le milieu professionnel, englobant l'échange d'informations, d'idées et de sentiments entre individus ou groupes. <strong>Elle se manifeste sous diverses formes</strong>, telles que la communication verbale, non verbale, écrite, et digitale. Dans un contexte professionnel, la communication est essentielle pour assurer la clarté des instructions, la collaboration entre équipes, et la transmission efficace des connaissances.</p>
                   <h2>Utilisation</h2>
-                  <p>Dans mon parcours professionnel, j'ai régulièrement utilisé la communication pour <strong>faciliter
-                      la gestion de projets et améliorer les relations interpersonnelles</strong>. Par exemple, lors du
-                    projet ARGOS, j'ai mis en place des réunions hebdomadaires pour synchroniser les efforts de l'équipe
-                    et résoudre rapidement les problèmes. Grâce à une communication claire et efficace, nous avons pu
-                    intégrer les données d'alertes des parcs énergétiques dans Elasticsearch, améliorant ainsi la
-                    gestion des alertes.
-                    Une autre anecdote illustrative concerne le projet <strong>Mat'moi ça</strong>, où j'ai organisé des
-                    ateliers de brainstorming pour recueillir les idées des participants et les intégrer dans le plan du
-                    tournoi d'échecs en ligne. Ces ateliers ont permis de surmonter les défis organisationnels et ont
-                    conduit à une meilleure coordination et exécution de l'événement. La communication ouverte et
-                    transparente a été essentielle pour mobiliser les ressources nécessaires et atteindre nos objectifs
-                    de collecte de fonds pour l'UNICEF.
-                  </p>
+                  <p>Dans mon parcours professionnel, j'ai régulièrement utilisé la communication pour <strong>faciliter la gestion de projets et améliorer les relations interpersonnelles</strong>. Par exemple, lors du projet <strong>ARGOS</strong>, j'ai mis en place des réunions hebdomadaires pour synchroniser les efforts de l'équipe et résoudre rapidement les problèmes. Grâce à une communication claire et efficace, nous avons pu intégrer les données d'alertes des parcs énergétiques dans Elasticsearch, améliorant ainsi la gestion des alertes. Ces réunions permettaient de détailler les points techniques complexes en les rendant accessibles à toute l'équipe, favorisant une compréhension commune et une exécution harmonieuse des tâches.</p>
+                  <p>Une autre anecdote illustrative concerne le projet <strong>Mat'moi ça</strong>, où j'ai organisé des ateliers de brainstorming pour recueillir les idées des participants et les intégrer dans le plan du tournoi d'échecs en ligne. Ces ateliers ont permis de surmonter les défis organisationnels et ont conduit à une meilleure coordination et exécution de l'événement. La communication ouverte et transparente a été essentielle pour mobiliser les ressources nécessaires et atteindre nos objectifs de collecte de fonds pour l'UNICEF. Par exemple, en discutant directement avec les représentants de chess.com, nous avons obtenu des abonnements premium gratuits pour les participants, ce qui a enrichi l'expérience utilisateur et attiré plus de participants.</p>
                   <h2>Autocritique</h2>
-                  <p><strong>Bien que ma maîtrise de la communication soit avancée</strong>, je reconnais qu'il y a
-                    toujours place à l'amélioration. Ma principale marge de progression réside dans l'adaptation de ma
-                    communication à différents publics et contextes. Par exemple, j'ai parfois constaté que des
-                    informations techniques pouvaient être perçues comme complexes par des collègues non spécialisés, ce
-                    qui nécessitait une simplification de mon discours.
-                    <strong>Avec l'expérience, j'ai appris que la communication doit être flexible et
-                      contextuelle</strong>. Je conseille de toujours adapter le niveau de détail et le vocabulaire en
-                    fonction de l'audience pour assurer une compréhension optimale. La vitesse d'acquisition de cette
-                    compétence a été notable pour moi, notamment grâce à des formations continues et à des pratiques
-                    régulières.
-                  </p>
+                  <p><strong>Bien que ma maîtrise de la communication soit avancée</strong>, je reconnais qu'il y a toujours place à l'amélioration. Ma principale marge de progression réside dans l'adaptation de ma communication à différents publics et contextes. Par exemple, j'ai parfois constaté que des informations techniques pouvaient être perçues comme complexes par des collègues non spécialisés, ce qui nécessitait une simplification de mon discours. <strong>Avec l'expérience, j'ai appris que la communication doit être flexible et contextuelle</strong>. Je conseille de toujours adapter le niveau de détail et le vocabulaire en fonction de l'audience pour assurer une compréhension optimale. La vitesse d'acquisition de cette compétence a été notable pour moi, notamment grâce à des formations continues et à des pratiques régulières.</p>
                   <h2>Evolution</h2>
-                  <p><strong>La communication occupe une place centrale dans mon profil professionnel</strong>, étant un
-                    ingénieur qui doit souvent présenter des projets à divers interlocuteurs, de la direction aux
-                    équipes techniques. À moyen terme, mon objectif est de perfectionner encore davantage cette
-                    compétence en suivant des formations avancées en communication interculturelle et en intelligence
-                    émotionnelle.
-                    <strong>Actuellement, je suis des cours en ligne sur les techniques de présentation et la gestion de
-                      conflits</strong>. Ces formations visent à enrichir mes compétences existantes et à m'aider à
-                    naviguer avec aisance dans des situations professionnelles complexes.
-                  </p>
+                  <p><strong>La communication occupe une place centrale dans mon profil professionnel</strong>, étant un ingénieur qui doit souvent présenter des projets à divers interlocuteurs, de la direction aux équipes techniques. À moyen terme, mon objectif est de perfectionner encore davantage cette compétence en suivant des formations avancées en communication interculturelle et en intelligence émotionnelle. <strong>Actuellement, je suis des cours en ligne sur les techniques de présentation et la gestion de conflits</strong>. Ces formations visent à enrichir mes compétences existantes et à m'aider à naviguer avec aisance dans des situations professionnelles complexes.</p>
                   <div style="text-justify: flex;">
                     <a class="btn btn-primary" data-dismiss="modal" role="button"
                       onclick="redirectButtonLink('#workmodal4')">Mat'moi ça</a>
@@ -1735,42 +1674,41 @@
 
                 <div class="row gy-4">
                   <h2>Définition</h2>
-                  <p>La <strong>gestion de budget</strong> est une compétence clé qui consiste à planifier, organiser et
-                    contrôler les ressources financières d’un projet ou d’une organisation. Elle implique l'élaboration
-                    d'un budget prévisionnel, le suivi des dépenses et des revenus, et l'ajustement des allocations
-                    financières en fonction des besoins et des priorités. En ingénierie, cette compétence est
-                    essentielle pour assurer que les projets soient menés à bien dans le respect des contraintes
-                    financières et des délais impartis.</p>
+                  <p>La <strong>gestion de budget</strong> est une compétence clé qui consiste à planifier, organiser et contrôler les ressources financières d’un projet ou d’une organisation. Elle implique l'élaboration d'un budget prévisionnel, le suivi des dépenses et des revenus, et l'ajustement des allocations financières en fonction des besoins et des priorités. En ingénierie, cette compétence est essentielle pour assurer que les projets soient menés à bien dans le respect des contraintes financières et des délais impartis.</p>
                   <h2>Utilisation</h2>
-                  <p>Dans le cadre professionnel, la gestion de budget se manifeste par plusieurs actions concrètes. Par
-                    exemple, lors du développement de l'application <strong>Hypotech</strong>, nous avons dû
-                    <strong>définir un budget précis</strong> pour couvrir les coûts des technologies utilisées, comme
-                    Java et Angular, ainsi que les ressources humaines nécessaires. En cours de projet, nous avons
-                    utilisé des outils de suivi financier pour surveiller les dépenses et garantir que nous restions
-                    dans les limites budgétaires fixées. Un autre exemple est lors de la réalisation de
-                    <strong>YoutubeBeatUploader</strong>, une application de bureau en C#. Nous avons dû adapter le
-                    budget en fonction des imprévus, comme la nécessité d'intégrer l'API de YouTube pour des
-                    fonctionnalités avancées. Grâce à une gestion rigoureuse du budget, nous avons pu terminer les
-                    projets sans dépassement financier, tout en respectant les objectifs fixés par les commanditaires.
-                  </p>
+                  <p>Dans le cadre professionnel, la gestion de budget se manifeste par plusieurs actions concrètes. Par exemple, lors du développement de l'application <strong>Hypotech</strong>, j'ai dû <strong>définir un budget précis</strong> pour couvrir les coûts des technologies utilisées, comme Java et Angular, ainsi que les ressources humaines nécessaires. Une fois le budget initial défini, j'ai utilisé des outils comme Excel pour suivre et gérer les dépenses, et j'ai mis en place des tableaux de bord financiers pour visualiser en temps réel l'état des finances du projet. Une des décisions critiques a été l'allocation de fonds supplémentaires pour la formation de l'équipe sur Angular, ce qui a permis d'améliorer la qualité et la rapidité de développement de l'application.</p>
+                  <p>Un autre exemple est lors de la réalisation de <strong>YoutubeBeatUploader</strong>, une application de bureau en C#. Nous avons initialement alloué un budget pour les fonctionnalités de base, mais nous avons rapidement rencontré des imprévus, comme la nécessité d'intégrer l'API de YouTube pour des fonctionnalités avancées. Grâce à une gestion rigoureuse du budget, nous avons pu réallouer des fonds initialement prévus pour d'autres tâches vers l'intégration de cette API. J'ai utilisé des méthodes de gestion de projet agile pour ajuster rapidement les priorités budgétaires et assurer que les ressources financières étaient utilisées de manière optimale. Par exemple, l'achat de licences pour les bibliothèques nécessaires à l'intégration de l'API a été planifié et exécuté sans dépasser le budget total.</p>
                   <h2>Autocritique</h2>
-                  <p>Malgré les succès obtenus, je reconnais qu'il y a toujours des marges de progression. Par exemple,
-                    lors du développement de <strong>Hypotech</strong>, une analyse plus approfondie des besoins en
-                    termes de licences et de formation aurait pu éviter des surcoûts imprévus. Cependant, ma capacité à
-                    <strong>ajuster le budget en temps réel</strong> a souvent été un atout majeur. Par exemple, lors de
-                    la création de <strong>YoutubeBeatUploader</strong>, j'ai pu réallouer des fonds initialement prévus
-                    pour des fonctionnalités non essentielles vers des aspects prioritaires, comme l'intégration de
-                    l'API YouTube, ce qui a considérablement amélioré la satisfaction du client.</p>
+                  <p>Malgré les succès obtenus, je reconnais qu'il y a toujours des marges de progression. Par exemple, lors du développement de <strong>Hypotech</strong>, une analyse plus approfondie des besoins en termes de licences et de formation aurait pu éviter des surcoûts imprévus. Cependant, ma capacité à <strong>ajuster le budget en temps réel</strong> a souvent été un atout majeur. Lors de la création de <strong>YoutubeBeatUploader</strong>, j'ai pu réallouer des fonds initialement prévus pour des fonctionnalités non essentielles vers des aspects prioritaires, comme l'intégration de l'API YouTube, ce qui a considérablement amélioré la satisfaction du client. J'ai également appris l'importance de prévoir des marges de sécurité dans les budgets pour absorber les imprévus sans compromettre la qualité du projet.</p>
+                  <h2>Implémentation technique</h2>
+                  <ol>
+                      <li>
+                          <strong>Définition du budget initial</strong> :<br>
+                          Pour chaque projet, j'ai commencé par établir un budget initial en collaboration avec les parties prenantes. Cela comprenait une estimation des coûts pour les technologies, les licences, les ressources humaines et les imprévus.
+                      </li>
+                      <li>
+                          <strong>Suivi et ajustement des dépenses</strong> :<br>
+                          Utilisation d'outils comme Excel et des logiciels de gestion de projet pour suivre les dépenses en temps réel. Mise en place de tableaux de bord financiers pour visualiser l'état des finances du projet et prendre des décisions éclairées sur les ajustements nécessaires.
+                      </li>
+                      <li>
+                          <strong>Réallocation des ressources</strong> :<br>
+                          En cas d'imprévus, j'ai réalloué les ressources financières en fonction des priorités du projet. Par exemple, lors de l'intégration de l'API YouTube dans <strong>YoutubeBeatUploader</strong>, j'ai redirigé les fonds prévus pour des fonctionnalités secondaires vers l'achat de licences et la formation nécessaire pour cette intégration.
+                      </li>
+                      <li>
+                          <strong>Gestion des imprévus</strong> :<br>
+                          Préparation de marges de sécurité dans les budgets pour absorber les imprévus. Lors de <strong>Hypotech</strong>, cette approche a permis de gérer des coûts additionnels pour des licences et formations non prévues initialement sans dépasser le budget global.
+                      </li>
+                      <li>
+                          <strong>Rapport et communication</strong> :<br>
+                          Communication régulière avec les parties prenantes sur l'état financier du projet. Présentation des rapports financiers et des ajustements nécessaires lors des réunions de suivi bi-hebdomadaires.
+                      </li>
+                  </ol>
+                  <p>
+                      Ces expériences m'ont appris l'importance de la rigueur dans la gestion de budget et la flexibilité nécessaire pour s'adapter aux changements en cours de projet. La maîtrise des outils de gestion financière et la capacité à anticiper et gérer les imprévus sont essentielles pour garantir le succès financier des projets.
+                  </p>
                   <h2>Evolution</h2>
-                  <p>La gestion de budget est une compétence en constante évolution. Pour maintenir et améliorer mon
-                    expertise, je m'engage régulièrement dans des <strong>formations continues</strong> et des
-                    autoformations. Par exemple, je suis actuellement une formation avancée en gestion financière de
-                    projet qui couvre des aspects tels que la prévision budgétaire avancée et l'analyse des risques
-                    financiers.
-                    À moyen terme, mon objectif est d’atteindre un niveau d'expertise où je pourrai <strong>conseiller
-                      d'autres professionnels</strong> sur les meilleures pratiques de gestion budgétaire. Je vise
-                    également à intégrer des outils de gestion financière automatisée pour améliorer encore l'efficacité
-                    et la précision de la gestion des budgets dans mes projets futurs.</p>
+                  <p>La gestion de budget est une compétence en constante évolution. Pour maintenir et améliorer mon expertise, je m'engage régulièrement dans des <strong>formations continues</strong> et des autoformations. Par exemple, je suis actuellement une formation avancée en gestion financière de projet qui couvre des aspects tels que la prévision budgétaire avancée et l'analyse des risques financiers. </p>
+                  <p>À moyen terme, mon objectif est d’atteindre un niveau d'expertise où je pourrai <strong>conseiller d'autres professionnels</strong> sur les meilleures pratiques de gestion budgétaire. Je vise également à intégrer des outils de gestion financière automatisée pour améliorer encore l'efficacité et la précision de la gestion des budgets dans mes projets futurs. En conclusion, la gestion de budget est une compétence essentielle qui nécessite une compréhension approfondie et une adaptation continue. Les expériences acquises et les formations suivies contribuent à mon développement professionnel et à la réalisation de projets de plus en plus complexes et innovants.</p>
                   <div style="text-justify: flex;">
                     <a class="btn btn-primary" data-dismiss="modal" role="button"
                       onclick="redirectButtonLink('#workmodal3')">YoutubeBeatUploader</a>
